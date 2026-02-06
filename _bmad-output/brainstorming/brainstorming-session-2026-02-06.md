@@ -3,7 +3,7 @@ stepsCompleted: [1]
 inputDocuments: []
 session_topic: 'Improving web consumption experience for Stage OTT platform trial users acquired via Meta/Google ads'
 session_goals: 'Design pull-based experiments to increase content consumption start on mobile web browsers while keeping user experience at the core'
-selected_approach: ''
+selected_approach: 'progressive-flow'
 techniques_used: []
 ideas_generated: []
 context_file: ''
