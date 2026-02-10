@@ -1,0 +1,2 @@
+# Local settings with secrets/API keys
+.claude/settings.local.json
