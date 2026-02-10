@@ -19,7 +19,8 @@ Design the UI for "Randeep ki Pasand" — a curated content recommendation featu
 
 ## 2. Design System Reference
 
-> **Figma File:** _[Insert Stage OTT Figma file URL here]_
+> **Figma File:** https://www.figma.com/design/zr5WpG31m1eRom3SvlMyjc/Activation?node-id=0-1&t=7HpBYqbD5wrqZ2MQ-1
+> **HTML Mockups:** `designs/randeep-ki-pasand-mockup.html` (open in browser to preview)
 >
 > All designs MUST use Stage's existing design system — colors, typography, spacing, component patterns, and visual language. Do not introduce new design patterns unless explicitly required by this brief.
 
