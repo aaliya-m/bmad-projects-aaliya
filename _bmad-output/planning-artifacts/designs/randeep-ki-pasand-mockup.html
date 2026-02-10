@@ -4,40 +4,56 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Randeep ki Pasand — Stage OTT Design Mockups</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   /* ============================================
-     STAGE OTT DESIGN SYSTEM (Editable Variables)
-     Replace these with your actual Figma tokens
+     STAGE OTT DESIGN SYSTEM
+     Brand: Orange-themed, dark background OTT platform
      ============================================ */
   :root {
-    /* Brand Colors */
-    --brand-primary: #E50914;
-    --brand-primary-hover: #C4070F;
-    --brand-gradient: linear-gradient(135deg, #E50914, #FF4D58);
+    /* Stage Brand Colors — Orange Theme */
+    --brand-primary: #FF6B00;
+    --brand-primary-light: #FF8A33;
+    --brand-primary-dark: #E55D00;
+    --brand-primary-hover: #E55D00;
+    --brand-gradient: linear-gradient(135deg, #FF6B00 0%, #FF9A44 100%);
+    --brand-gradient-strong: linear-gradient(135deg, #FF5500 0%, #FF8800 50%, #FFAA33 100%);
     --brand-accent: #FFD700;
+    --brand-accent-soft: #FFECB3;
 
-    /* Background Colors */
-    --bg-dark: #0D0D0D;
-    --bg-card: #1A1A1A;
-    --bg-surface: #222222;
-    --bg-overlay: rgba(0, 0, 0, 0.65);
+    /* Background Colors — Deep Dark */
+    --bg-dark: #0A0A0A;
+    --bg-card: #141414;
+    --bg-surface: #1C1C1C;
+    --bg-elevated: #242424;
+    --bg-overlay: rgba(0, 0, 0, 0.7);
+    --bg-scrim: rgba(10, 10, 10, 0.85);
 
     /* Text Colors */
     --text-primary: #FFFFFF;
-    --text-secondary: #B0B0B0;
-    --text-muted: #777777;
+    --text-secondary: #A8A8A8;
+    --text-muted: #666666;
+    --text-on-brand: #FFFFFF;
 
     /* Semantic */
-    --success-green: #27AE60;
-    --badge-bg: rgba(255, 255, 255, 0.12);
+    --success-green: #00C853;
+    --success-green-soft: rgba(0, 200, 83, 0.15);
+    --badge-bg: rgba(255, 255, 255, 0.1);
+    --badge-bg-active: rgba(255, 107, 0, 0.2);
 
     /* Typography */
-    --font-primary: 'Segoe UI', 'Noto Sans Devanagari', system-ui, sans-serif;
+    --font-primary: 'Poppins', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+    --font-hindi: 'Noto Sans Devanagari', 'Poppins', system-ui, sans-serif;
+    --font-weight-extra-bold: 800;
     --font-weight-bold: 700;
     --font-weight-semibold: 600;
+    --font-weight-medium: 500;
     --font-weight-regular: 400;
 
     /* Spacing */
+    --space-2xs: 2px;
     --space-xs: 4px;
     --space-sm: 8px;
     --space-md: 16px;
@@ -46,14 +62,19 @@
     --space-xxl: 48px;
 
     /* Radius */
-    --radius-sm: 6px;
+    --radius-xs: 4px;
+    --radius-sm: 8px;
     --radius-md: 12px;
-    --radius-lg: 20px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
     --radius-pill: 999px;
 
     /* Shadows */
-    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.4);
-    --shadow-drawer: 0 -8px 32px rgba(0, 0, 0, 0.6);
+    --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-drawer: 0 -8px 40px rgba(0, 0, 0, 0.7);
+    --shadow-btn: 0 4px 16px rgba(255, 107, 0, 0.35);
+    --shadow-btn-hover: 0 6px 24px rgba(255, 107, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(255, 107, 0, 0.2);
   }
 
   /* ============================================
@@ -63,9 +84,10 @@
 
   body {
     font-family: var(--font-primary);
-    background: #111;
+    background: #080808;
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
   }
 
@@ -83,30 +105,54 @@
 
   .screen-label {
     text-align: center;
-    margin-bottom: var(--space-md);
+    margin-bottom: var(--space-lg);
   }
   .screen-label h2 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: var(--font-weight-bold);
     color: var(--text-primary);
-    margin-bottom: 4px;
+    margin-bottom: 6px;
   }
   .screen-label p {
     font-size: 13px;
     color: var(--text-secondary);
+    max-width: 340px;
+    margin: 0 auto;
+    line-height: 1.4;
   }
 
   .phone-frame {
     width: 375px;
     max-width: 100%;
-    min-height: 700px;
+    min-height: 740px;
     background: var(--bg-dark);
-    border-radius: 32px;
-    border: 3px solid #333;
+    border-radius: 40px;
+    border: 3px solid #2a2a2a;
     overflow: hidden;
     position: relative;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    box-shadow: 0 25px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.05);
   }
+
+  /* Status bar */
+  .status-bar {
+    height: 44px;
+    padding: 12px 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-weight: var(--font-weight-semibold);
+    color: var(--text-primary);
+    background: transparent;
+    position: relative;
+    z-index: 5;
+  }
+  .status-bar-icons {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+  }
+  .status-bar-icons svg { width: 16px; height: 16px; fill: white; }
 
   /* ============================================
      SCREEN A: PAYMENT SUCCESS
@@ -115,103 +161,165 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: var(--space-xxl) var(--space-lg) var(--space-lg);
-    min-height: 700px;
+    padding: 0 var(--space-lg) var(--space-lg);
+    min-height: 696px;
     justify-content: center;
     background: var(--bg-dark);
+    position: relative;
+  }
+
+  /* Subtle background glow */
+  .success-screen::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 70%);
+    pointer-events: none;
   }
 
   .success-icon {
-    width: 64px;
-    height: 64px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
     background: var(--success-green);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--space-md);
-    animation: scaleIn 0.4s ease-out;
+    margin-bottom: var(--space-lg);
+    animation: successPulse 0.6s ease-out;
+    box-shadow: 0 0 30px rgba(0, 200, 83, 0.3);
+    position: relative;
+    z-index: 1;
   }
-  .success-icon svg { width: 32px; height: 32px; fill: white; }
+  .success-icon svg { width: 36px; height: 36px; fill: white; }
 
-  @keyframes scaleIn {
+  @keyframes successPulse {
     0% { transform: scale(0); opacity: 0; }
-    60% { transform: scale(1.1); }
+    50% { transform: scale(1.15); }
+    70% { transform: scale(0.95); }
     100% { transform: scale(1); opacity: 1; }
   }
 
   .success-title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--space-xs);
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .success-subtitle {
-    font-size: 14px;
+    font-size: 15px;
     color: var(--text-secondary);
     margin-bottom: var(--space-xl);
     text-align: center;
+    position: relative;
+    z-index: 1;
   }
 
   .randeep-card {
     width: 100%;
     background: var(--bg-surface);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     padding: var(--space-lg);
     display: flex;
     gap: var(--space-md);
     align-items: flex-start;
     margin-bottom: var(--space-xl);
     box-shadow: var(--shadow-card);
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255, 107, 0, 0.12);
   }
 
   .randeep-avatar {
     width: 72px;
     height: 72px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #444, #666);
     flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
-    font-weight: bold;
-    color: var(--text-secondary);
-    border: 2px solid var(--brand-primary);
     overflow: hidden;
     position: relative;
+    background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+    border: 2.5px solid var(--brand-primary);
+    box-shadow: 0 0 16px rgba(255, 107, 0, 0.25);
   }
-  .randeep-avatar::after {
-    content: 'RH';
-    font-size: 22px;
-    font-weight: 700;
-    color: #ccc;
+  .randeep-avatar-inner {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #3d2b1f 0%, #2a1f16 50%, #1a1410 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  /* Stylized silhouette for avatar placeholder */
+  .randeep-avatar-inner::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #5a4a3a;
+    top: 14px;
+  }
+  .randeep-avatar-inner::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 48px;
+    height: 30px;
+    border-radius: 24px 24px 0 0;
+    background: #5a4a3a;
   }
 
   .randeep-quote {
     flex: 1;
   }
   .randeep-name {
-    font-size: 13px;
-    font-weight: var(--font-weight-semibold);
-    color: var(--brand-accent);
-    margin-bottom: var(--space-xs);
-    letter-spacing: 0.5px;
+    font-size: 12px;
+    font-weight: var(--font-weight-bold);
+    color: var(--brand-primary);
+    margin-bottom: 6px;
+    letter-spacing: 1px;
     text-transform: uppercase;
   }
   .randeep-text {
+    font-family: var(--font-hindi);
     font-size: 16px;
-    line-height: 1.5;
+    line-height: 1.6;
     color: var(--text-primary);
-    font-style: italic;
+    position: relative;
+    padding-left: 16px;
   }
-  .randeep-text::before { content: '"'; color: var(--brand-primary); font-size: 20px; }
-  .randeep-text::after { content: '"'; color: var(--brand-primary); font-size: 20px; }
+  .randeep-text::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    bottom: 2px;
+    width: 3px;
+    border-radius: 2px;
+    background: var(--brand-gradient);
+  }
 
   .cta-primary {
     width: 100%;
-    padding: 16px;
+    padding: 18px;
     background: var(--brand-gradient);
     color: white;
     font-size: 17px;
@@ -222,18 +330,39 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: var(--space-sm);
-    transition: transform 0.1s, opacity 0.1s;
+    gap: 10px;
+    transition: transform 0.15s, box-shadow 0.15s;
     letter-spacing: 0.3px;
     margin-bottom: var(--space-md);
+    box-shadow: var(--shadow-btn);
+    position: relative;
+    z-index: 1;
+    font-family: var(--font-primary);
   }
-  .cta-primary:active { transform: scale(0.97); opacity: 0.9; }
-  .cta-primary svg { width: 20px; height: 20px; fill: white; }
+  .cta-primary:active { transform: scale(0.97); box-shadow: var(--shadow-btn-hover); }
+  .cta-primary svg { width: 22px; height: 22px; fill: white; }
 
   .trial-reminder {
     font-size: 13px;
     color: var(--text-muted);
     text-align: center;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .trial-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--success-green);
+    display: inline-block;
+    animation: dotPulse 2s infinite;
+  }
+  @keyframes dotPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
   }
   .trial-reminder span {
     color: var(--success-green);
@@ -244,72 +373,94 @@
      SCREEN B: HOMEPAGE WITH DRAWER (VARIANT A)
      ============================================ */
   .homepage {
-    min-height: 700px;
+    min-height: 696px;
     background: var(--bg-dark);
     position: relative;
   }
 
   .homepage-header {
-    padding: var(--space-md) var(--space-md);
+    padding: 10px var(--space-md) 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: var(--bg-dark);
   }
   .stage-logo {
-    font-size: 22px;
-    font-weight: var(--font-weight-bold);
-    color: var(--brand-primary);
-    letter-spacing: 2px;
+    font-size: 24px;
+    font-weight: var(--font-weight-extra-bold);
+    letter-spacing: 3px;
+    background: var(--brand-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
   .header-icons {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-sm);
+    align-items: center;
   }
   .header-icon {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: var(--bg-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+  .header-icon svg { width: 18px; height: 18px; fill: var(--text-secondary); }
 
   .hero-banner {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+    background: linear-gradient(135deg, #1a0f00 0%, #2a1500 30%, #1a0a00 100%);
     display: flex;
     align-items: flex-end;
-    padding: var(--space-md);
+    padding: var(--space-lg) var(--space-md);
     position: relative;
     overflow: hidden;
   }
+  /* Film grain texture */
   .hero-banner::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, var(--bg-dark), transparent 60%);
+    background: linear-gradient(to top, var(--bg-dark) 0%, transparent 50%);
+    z-index: 1;
+  }
+  .hero-banner::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: 160px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,154,68,0.08));
+    transform: rotate(-5deg);
   }
   .hero-text {
     position: relative;
-    z-index: 1;
+    z-index: 2;
   }
   .hero-text h3 {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: var(--font-weight-bold);
     margin-bottom: 4px;
   }
   .hero-text p {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-secondary);
   }
 
   .homepage-dimmed {
-    opacity: 0.4;
+    opacity: 0.35;
     pointer-events: none;
+    filter: blur(1px);
   }
 
   .content-row {
-    padding: var(--space-md) 0 var(--space-md) var(--space-md);
+    padding: var(--space-md) 0 var(--space-sm) var(--space-md);
   }
   .row-title {
     font-size: 15px;
@@ -319,7 +470,7 @@
   }
   .row-scroll {
     display: flex;
-    gap: var(--space-sm);
+    gap: 10px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -328,23 +479,147 @@
   .row-scroll::-webkit-scrollbar { display: none; }
 
   .mini-card {
-    width: 100px;
+    width: 105px;
     flex-shrink: 0;
     scroll-snap-align: start;
   }
   .mini-card-poster {
-    width: 100px;
-    height: 140px;
+    width: 105px;
+    height: 148px;
     border-radius: var(--radius-sm);
-    background: linear-gradient(135deg, #2a2a3e, #1a1a2e);
   }
   .mini-card-title {
     font-size: 11px;
     color: var(--text-secondary);
-    margin-top: 4px;
+    margin-top: 6px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-weight: var(--font-weight-medium);
+  }
+
+  /* Poster Art Placeholders — varied color schemes */
+  .poster-art-1 {
+    background: linear-gradient(160deg, #4a2c17 0%, #8B4513 30%, #D2691E 60%, #2a1a0d 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .poster-art-1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  }
+
+  .poster-art-2 {
+    background: linear-gradient(160deg, #1a2a3a 0%, #2c4a6a 30%, #4a7a9a 60%, #0d1a2a 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .poster-art-2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  }
+
+  .poster-art-3 {
+    background: linear-gradient(160deg, #2a1a2a 0%, #5a2a5a 30%, #8a4a8a 60%, #1a0d1a 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .poster-art-3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  }
+
+  .poster-art-4 {
+    background: linear-gradient(160deg, #1a2a1a 0%, #2a5a2a 30%, #4a8a4a 60%, #0d1a0d 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .poster-art-4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  }
+
+  .poster-art-5 {
+    background: linear-gradient(160deg, #2a2a1a 0%, #6a5a2a 30%, #aa8a3a 60%, #1a1a0d 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .poster-art-5::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  }
+
+  .poster-art-6 {
+    background: linear-gradient(160deg, #2a1a1a 0%, #6a2a2a 30%, #9a4a3a 60%, #1a0d0d 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .poster-art-6::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  }
+
+  /* Poster silhouette figure */
+  .poster-figure {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 70px;
+    opacity: 0.25;
+  }
+  .poster-figure::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+  }
+  .poster-figure::after {
+    content: '';
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 46px;
+    border-radius: 16px 16px 4px 4px;
+    background: rgba(255,255,255,0.2);
   }
 
   /* Drawer */
@@ -364,11 +639,11 @@
     left: 0;
     right: 0;
     background: var(--bg-card);
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-    padding: var(--space-sm) var(--space-md) var(--space-lg);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    padding: var(--space-sm) var(--space-md) var(--space-xl);
     z-index: 20;
     box-shadow: var(--shadow-drawer);
-    animation: slideUp 0.3s ease-out;
+    animation: slideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
   @keyframes slideUp {
@@ -377,42 +652,64 @@
   }
 
   .drawer-handle {
-    width: 36px;
+    width: 40px;
     height: 4px;
-    background: #555;
+    background: #444;
     border-radius: var(--radius-pill);
-    margin: 0 auto var(--space-md);
+    margin: var(--space-sm) auto var(--space-lg);
   }
 
   .drawer-header {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: var(--space-md);
     margin-bottom: var(--space-lg);
   }
 
   .drawer-avatar {
-    width: 44px;
-    height: 44px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #444, #666);
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid var(--brand-primary);
-    font-size: 14px;
-    font-weight: 700;
-    color: #ccc;
+    overflow: hidden;
+    border: 2.5px solid var(--brand-primary);
+    box-shadow: 0 0 12px rgba(255, 107, 0, 0.2);
+    background: linear-gradient(145deg, #3d2b1f 0%, #2a1f16 50%, #1a1410 100%);
+    position: relative;
+  }
+  .drawer-avatar::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #5a4a3a;
+  }
+  .drawer-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 20px;
+    border-radius: 15px 15px 0 0;
+    background: #5a4a3a;
   }
 
   .drawer-title-block h3 {
-    font-size: 17px;
+    font-size: 18px;
     font-weight: var(--font-weight-bold);
+    line-height: 1.2;
+    font-family: var(--font-hindi);
   }
   .drawer-title-block p {
     font-size: 12px;
-    color: var(--text-secondary);
+    color: var(--text-muted);
+    margin-top: 2px;
   }
 
   .drawer-cards {
@@ -422,15 +719,20 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: var(--space-md);
-    margin-bottom: var(--space-md);
+    margin: 0 calc(var(--space-md) * -1);
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
   }
   .drawer-cards::-webkit-scrollbar { display: none; }
 
+  /* Content Card — shared between drawer and section */
   .content-card {
     width: 140px;
     flex-shrink: 0;
     scroll-snap-align: start;
+    transition: transform 0.15s;
   }
+  .content-card:active { transform: scale(0.97); }
 
   .card-poster {
     width: 140px;
@@ -438,7 +740,6 @@
     border-radius: var(--radius-sm);
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, #2a2a3e, #1a1a2e);
   }
 
   .card-poster-img {
@@ -448,8 +749,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    color: #555;
   }
 
   .card-badge {
@@ -460,33 +759,35 @@
     color: white;
     font-size: 9px;
     font-weight: var(--font-weight-bold);
-    padding: 2px 6px;
-    border-radius: var(--radius-sm);
-    letter-spacing: 0.5px;
+    padding: 3px 8px;
+    border-radius: var(--radius-xs);
+    letter-spacing: 0.8px;
     text-transform: uppercase;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
 
   .card-play-btn {
     position: absolute;
-    bottom: var(--space-sm);
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--brand-gradient);
     color: white;
     border: none;
     border-radius: var(--radius-pill);
-    padding: 8px 20px;
+    padding: 9px 22px;
     font-size: 13px;
     font-weight: var(--font-weight-bold);
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 5px;
     white-space: nowrap;
-    box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
-    transition: transform 0.1s;
+    box-shadow: var(--shadow-btn);
+    transition: transform 0.15s;
+    font-family: var(--font-primary);
   }
-  .card-play-btn:active { transform: translateX(-50%) scale(0.95); }
+  .card-play-btn:active { transform: translateX(-50%) scale(0.93); }
   .card-play-btn svg { width: 14px; height: 14px; fill: white; }
 
   .card-info {
@@ -496,7 +797,7 @@
     font-size: 13px;
     font-weight: var(--font-weight-semibold);
     line-height: 1.3;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -510,59 +811,99 @@
   }
   .lang-badge {
     background: var(--badge-bg);
-    padding: 1px 5px;
-    border-radius: 3px;
+    padding: 2px 6px;
+    border-radius: var(--radius-xs);
     font-size: 10px;
     font-weight: var(--font-weight-semibold);
     color: var(--text-secondary);
+  }
+
+  .drawer-footer {
+    padding-top: var(--space-sm);
+    border-top: 1px solid rgba(255,255,255,0.06);
   }
 
   .drawer-see-all {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 6px;
     color: var(--brand-primary);
     font-size: 14px;
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
-    padding: var(--space-sm) 0;
+    padding: var(--space-md) 0 var(--space-xs);
+    transition: opacity 0.15s;
   }
-  .drawer-see-all svg { width: 16px; height: 16px; fill: var(--brand-primary); }
+  .drawer-see-all:active { opacity: 0.7; }
+  .drawer-see-all svg { width: 18px; height: 18px; fill: var(--brand-primary); }
 
   /* ============================================
      SCREEN C: HOMEPAGE SECTION (VARIANT B)
      ============================================ */
   .homepage-full {
-    min-height: 700px;
+    min-height: 696px;
     background: var(--bg-dark);
   }
 
   .randeep-section {
-    padding: var(--space-lg) 0 var(--space-md) var(--space-md);
+    padding: var(--space-lg) 0 var(--space-sm);
+    position: relative;
+  }
+
+  /* Subtle section background highlight */
+  .randeep-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 107, 0, 0.04) 0%, transparent 100%);
+    pointer-events: none;
   }
 
   .section-header {
     display: flex;
     align-items: center;
-    gap: var(--space-sm);
+    gap: 10px;
     margin-bottom: var(--space-md);
-    padding-right: var(--space-md);
+    padding: 0 var(--space-md);
+    position: relative;
+    z-index: 1;
   }
 
   .section-avatar {
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #444, #666);
     flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
     border: 2px solid var(--brand-primary);
-    font-size: 12px;
-    font-weight: 700;
-    color: #ccc;
+    background: linear-gradient(145deg, #3d2b1f 0%, #2a1f16 50%, #1a1410 100%);
+    position: relative;
+  }
+  .section-avatar::before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #5a4a3a;
+  }
+  .section-avatar::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 14px;
+    border-radius: 11px 11px 0 0;
+    background: #5a4a3a;
   }
 
   .section-title-block {
@@ -572,10 +913,13 @@
     font-size: 16px;
     font-weight: var(--font-weight-bold);
     line-height: 1.2;
+    font-family: var(--font-hindi);
   }
   .section-title-block p {
     font-size: 11px;
     color: var(--text-muted);
+    margin-top: 1px;
+    font-family: var(--font-hindi);
   }
 
   .section-see-all {
@@ -584,16 +928,21 @@
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 2px;
   }
+  .section-see-all svg { width: 14px; height: 14px; fill: var(--brand-primary); }
 
   .section-cards {
     display: flex;
-    gap: var(--space-md);
+    gap: 14px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: var(--space-sm);
-    padding-right: var(--space-md);
+    padding: 0 var(--space-md) var(--space-sm);
+    position: relative;
+    z-index: 1;
   }
   .section-cards::-webkit-scrollbar { display: none; }
 
@@ -601,43 +950,59 @@
     position: absolute;
     top: var(--space-sm);
     right: var(--space-sm);
-    background: rgba(0,0,0,0.75);
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     color: var(--brand-accent);
     font-size: 8px;
     font-weight: var(--font-weight-bold);
-    padding: 3px 6px;
-    border-radius: var(--radius-sm);
-    letter-spacing: 0.3px;
+    padding: 3px 7px;
+    border-radius: var(--radius-xs);
+    letter-spacing: 0.5px;
     display: flex;
     align-items: center;
-    gap: 2px;
+    gap: 3px;
+    text-transform: uppercase;
   }
   .rec-badge svg { width: 10px; height: 10px; fill: var(--brand-accent); }
+
+  /* Divider between sections */
+  .section-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: var(--space-sm) var(--space-md) 0;
+  }
 
   /* ============================================
      SKELETON LOADING STATE
      ============================================ */
-  .skeleton-section { padding: var(--space-md); }
-
   @keyframes shimmer {
     0% { background-position: -200px 0; }
     100% { background-position: 200px 0; }
   }
   .skeleton {
-    background: linear-gradient(90deg, var(--bg-surface) 25%, #333 50%, var(--bg-surface) 75%);
+    background: linear-gradient(90deg, var(--bg-surface) 25%, #282828 50%, var(--bg-surface) 75%);
     background-size: 400px 100%;
     animation: shimmer 1.5s infinite;
     border-radius: var(--radius-sm);
   }
   .skeleton-poster { width: 140px; height: 200px; flex-shrink: 0; }
-  .skeleton-text { height: 12px; width: 100px; margin-top: 8px; }
-  .skeleton-text-sm { height: 10px; width: 70px; margin-top: 4px; }
+  .skeleton-text { height: 13px; width: 100px; margin-top: 8px; border-radius: var(--radius-xs); }
+  .skeleton-text-sm { height: 10px; width: 70px; margin-top: 5px; border-radius: var(--radius-xs); }
   .skeleton-row {
     display: flex;
     gap: var(--space-md);
     padding-left: var(--space-md);
     overflow: hidden;
   }
+  .skeleton-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .skeleton-title { height: 16px; width: 160px; border-radius: var(--radius-xs); }
+  .skeleton-subtitle { height: 10px; width: 120px; margin-top: 4px; border-radius: var(--radius-xs); }
 
   /* ============================================
      NAV TABS (screen selector)
@@ -646,22 +1011,23 @@
     position: sticky;
     top: 0;
     z-index: 100;
-    background: #111;
+    background: #0a0a0a;
     display: flex;
     gap: 0;
-    border-bottom: 1px solid #333;
-    padding: 0 var(--space-md);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 0;
   }
   .nav-tab {
     flex: 1;
-    padding: 14px 8px;
+    padding: 16px 8px;
     text-align: center;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: var(--font-weight-semibold);
     color: var(--text-muted);
     cursor: pointer;
     border-bottom: 2px solid transparent;
     transition: color 0.2s, border-color 0.2s;
+    letter-spacing: 0.3px;
   }
   .nav-tab.active {
     color: var(--brand-primary);
@@ -670,13 +1036,71 @@
   .nav-tab:hover { color: var(--text-secondary); }
 
   .screen-container { display: none; }
-  .screen-container.active { display: flex; flex-direction: column; align-items: center; padding: 40px var(--space-md); }
+  .screen-container.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px var(--space-md) 60px;
+  }
+
+  /* ============================================
+     SPEC ANNOTATIONS
+     ============================================ */
+  .spec-notes {
+    max-width: 375px;
+    width: 100%;
+    margin-top: var(--space-lg);
+    padding: var(--space-md);
+    background: var(--bg-surface);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255,255,255,0.06);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+  }
+  .spec-notes h4 {
+    color: var(--brand-primary);
+    font-size: 12px;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: var(--space-sm);
+  }
+  .spec-notes ul {
+    list-style: none;
+    padding: 0;
+  }
+  .spec-notes li {
+    padding: 3px 0;
+    padding-left: 14px;
+    position: relative;
+  }
+  .spec-notes li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brand-primary);
+    opacity: 0.5;
+  }
+  .spec-notes code {
+    background: rgba(255,107,0,0.1);
+    color: var(--brand-primary-light);
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-size: 11px;
+  }
 
   /* ============================================
      RESPONSIVE
      ============================================ */
-  @media (max-width: 400px) {
-    .phone-frame { border-radius: 0; border: none; width: 100%; }
+  @media (max-width: 420px) {
+    .phone-frame { border-radius: 0; border: none; width: 100%; box-shadow: none; }
+    .screen-container.active { padding: 20px 0 40px; }
+    .screen-label { padding: 0 var(--space-md); }
   }
 </style>
 </head>
@@ -685,9 +1109,9 @@
 <!-- Screen Navigation -->
 <nav class="nav-tabs">
   <div class="nav-tab active" onclick="showScreen('screenA')">A: Payment Success</div>
-  <div class="nav-tab" onclick="showScreen('screenB')">B: Drawer (Post-Trial)</div>
-  <div class="nav-tab" onclick="showScreen('screenC')">C: Homepage Section</div>
-  <div class="nav-tab" onclick="showScreen('screenD')">D: Loading State</div>
+  <div class="nav-tab" onclick="showScreen('screenB')">B: Drawer</div>
+  <div class="nav-tab" onclick="showScreen('screenC')">C: Homepage</div>
+  <div class="nav-tab" onclick="showScreen('screenD')">D: Loading</div>
 </nav>
 
 <!-- ============================================
@@ -696,11 +1120,19 @@
 <div class="screen-container active" id="screenA">
   <div class="screen-label">
     <h2>Variant A — Payment Success Screen</h2>
-    <p>Replaces the current static "trial ka maza lo" screen</p>
+    <p>Replaces current static "trial ka maza lo" screen. Single CTA to drive content consumption.</p>
   </div>
   <div class="phone-frame">
-    <div class="success-screen">
+    <!-- Status Bar -->
+    <div class="status-bar">
+      <span>9:41</span>
+      <div class="status-bar-icons">
+        <svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+      </div>
+    </div>
 
+    <div class="success-screen">
       <div class="success-icon">
         <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
       </div>
@@ -709,7 +1141,9 @@
       <p class="success-subtitle">₹1 Trial Activated — 7 Days Free</p>
 
       <div class="randeep-card">
-        <div class="randeep-avatar"></div>
+        <div class="randeep-avatar">
+          <div class="randeep-avatar-inner"></div>
+        </div>
         <div class="randeep-quote">
           <div class="randeep-name">Randeep Hooda</div>
           <div class="randeep-text">Maine ye 3 movies dekhi, maza aa gaya! Tum bhi dekho!</div>
@@ -722,10 +1156,23 @@
       </button>
 
       <p class="trial-reminder">
-        <span>●</span> 7 days remaining in your free trial
+        <span class="trial-dot"></span>
+        <span>7 days remaining</span> in your free trial
       </p>
-
     </div>
+  </div>
+
+  <div class="spec-notes">
+    <h4>Design Specs</h4>
+    <ul>
+      <li>Brand gradient CTA: <code>#FF6B00 → #FF9A44</code></li>
+      <li>Success icon: <code>#00C853</code> with glow shadow</li>
+      <li>Card border: <code>1px solid rgba(255,107,0,0.12)</code></li>
+      <li>Quote accent bar: brand gradient, 3px width</li>
+      <li>No nav bar, no distractions — single funnel to CTA</li>
+      <li>Avatar placeholder — replace with Randeep asset</li>
+      <li>Regional language variants in quote text</li>
+    </ul>
   </div>
 </div>
 
@@ -735,18 +1182,29 @@
 <div class="screen-container" id="screenB">
   <div class="screen-label">
     <h2>Variant A — Homepage with Drawer</h2>
-    <p>After tapping "Start Watching", homepage opens with auto-opened drawer</p>
+    <p>After tapping "Start Watching", homepage opens with auto-opened bottom sheet showing Randeep's curated picks.</p>
   </div>
   <div class="phone-frame">
     <div class="homepage">
 
       <!-- Dimmed homepage behind -->
       <div class="homepage-dimmed">
+        <div class="status-bar">
+          <span>9:41</span>
+          <div class="status-bar-icons">
+            <svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+          </div>
+        </div>
         <div class="homepage-header">
           <div class="stage-logo">STAGE</div>
           <div class="header-icons">
-            <div class="header-icon"></div>
-            <div class="header-icon"></div>
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5z"/></svg>
+            </div>
+            <div class="header-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+            </div>
           </div>
         </div>
 
@@ -760,9 +1218,9 @@
         <div class="content-row">
           <div class="row-title">Popular in Haryanvi</div>
           <div class="row-scroll">
-            <div class="mini-card"><div class="mini-card-poster"></div><div class="mini-card-title">Desi Dhamaka</div></div>
-            <div class="mini-card"><div class="mini-card-poster"></div><div class="mini-card-title">Chhora Haryanvi</div></div>
-            <div class="mini-card"><div class="mini-card-poster"></div><div class="mini-card-title">Jaat Ki Yaari</div></div>
+            <div class="mini-card"><div class="mini-card-poster poster-art-1"></div><div class="mini-card-title">Desi Dhamaka</div></div>
+            <div class="mini-card"><div class="mini-card-poster poster-art-2"></div><div class="mini-card-title">Chhora Haryanvi</div></div>
+            <div class="mini-card"><div class="mini-card-poster poster-art-3"></div><div class="mini-card-title">Jaat Ki Yaari</div></div>
           </div>
         </div>
       </div>
@@ -770,12 +1228,12 @@
       <!-- Overlay -->
       <div class="drawer-overlay"></div>
 
-      <!-- Drawer -->
+      <!-- Drawer — Randeep ki Pasand -->
       <div class="drawer">
         <div class="drawer-handle"></div>
 
         <div class="drawer-header">
-          <div class="drawer-avatar">RH</div>
+          <div class="drawer-avatar"></div>
           <div class="drawer-title-block">
             <h3>Randeep ki Pasand</h3>
             <p>Specially picked for you</p>
@@ -786,7 +1244,9 @@
           <!-- Card 1 -->
           <div class="content-card">
             <div class="card-poster">
-              <div class="card-poster-img">🎬</div>
+              <div class="card-poster-img poster-art-1">
+                <div class="poster-figure"></div>
+              </div>
               <div class="card-badge">HAR</div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -805,7 +1265,9 @@
           <!-- Card 2 -->
           <div class="content-card">
             <div class="card-poster">
-              <div class="card-poster-img">🎬</div>
+              <div class="card-poster-img poster-art-2">
+                <div class="poster-figure"></div>
+              </div>
               <div class="card-badge">HAR</div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -824,7 +1286,9 @@
           <!-- Card 3 -->
           <div class="content-card">
             <div class="card-poster">
-              <div class="card-poster-img">🎬</div>
+              <div class="card-poster-img poster-art-5">
+                <div class="poster-figure"></div>
+              </div>
               <div class="card-badge">HAR</div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
@@ -841,13 +1305,29 @@
           </div>
         </div>
 
-        <a href="#" class="drawer-see-all">
-          See All Randeep's Picks
-          <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-        </a>
+        <div class="drawer-footer">
+          <a href="#" class="drawer-see-all">
+            See All Randeep's Picks
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </a>
+        </div>
       </div>
 
     </div>
+  </div>
+
+  <div class="spec-notes">
+    <h4>Design Specs</h4>
+    <ul>
+      <li>Drawer: <code>border-radius: 24px 24px 0 0</code></li>
+      <li>Drawer animation: <code>slideUp 350ms cubic-bezier(0.22, 1, 0.36, 1)</code></li>
+      <li>Background dim: <code>opacity: 0.35</code> + <code>blur(1px)</code></li>
+      <li>Card poster: <code>140×200px</code> (2:3 ratio), <code>border-radius: 8px</code></li>
+      <li>Play button: brand gradient with <code>box-shadow</code> glow</li>
+      <li>Language badge: <code>9px bold uppercase</code> on brand orange</li>
+      <li>Horizontal scroll with <code>scroll-snap-type: x mandatory</code></li>
+      <li>Dismiss: swipe down or tap dimmed area</li>
+    </ul>
   </div>
 </div>
 
@@ -857,16 +1337,28 @@
 <div class="screen-container" id="screenC">
   <div class="screen-label">
     <h2>Variant B — Homepage Section (Returning User)</h2>
-    <p>Inline section on homepage for returning trial/subscribed users</p>
+    <p>Inline section on homepage for returning trial/subscribed users. Placed immediately below hero banner.</p>
   </div>
   <div class="phone-frame">
     <div class="homepage-full">
 
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-bar-icons">
+          <svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+        </div>
+      </div>
+
       <div class="homepage-header">
         <div class="stage-logo">STAGE</div>
         <div class="header-icons">
-          <div class="header-icon"></div>
-          <div class="header-icon"></div>
+          <div class="header-icon">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5z"/></svg>
+          </div>
+          <div class="header-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+          </div>
         </div>
       </div>
 
@@ -877,22 +1369,27 @@
         </div>
       </div>
 
-      <!-- Randeep ki Pasand Section -->
+      <!-- Randeep ki Pasand Section — Primary Position -->
       <div class="randeep-section">
         <div class="section-header">
-          <div class="section-avatar">RH</div>
+          <div class="section-avatar"></div>
           <div class="section-title-block">
             <h3>Randeep ki Pasand</h3>
             <p>Randeep ne recommend kiya</p>
           </div>
-          <a href="#" class="section-see-all">See All →</a>
+          <a href="#" class="section-see-all">
+            See All
+            <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+          </a>
         </div>
 
         <div class="section-cards">
           <!-- Card 1 -->
           <div class="content-card">
             <div class="card-poster">
-              <div class="card-poster-img">🎬</div>
+              <div class="card-poster-img poster-art-1">
+                <div class="poster-figure"></div>
+              </div>
               <div class="card-badge">HAR</div>
               <div class="rec-badge">
                 <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
@@ -915,7 +1412,9 @@
           <!-- Card 2 -->
           <div class="content-card">
             <div class="card-poster">
-              <div class="card-poster-img">🎬</div>
+              <div class="card-poster-img poster-art-6">
+                <div class="poster-figure"></div>
+              </div>
               <div class="card-badge">RAJ</div>
               <div class="rec-badge">
                 <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
@@ -938,7 +1437,9 @@
           <!-- Card 3 -->
           <div class="content-card">
             <div class="card-poster">
-              <div class="card-poster-img">🎬</div>
+              <div class="card-poster-img poster-art-3">
+                <div class="poster-figure"></div>
+              </div>
               <div class="card-badge">BHO</div>
               <div class="rec-badge">
                 <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
@@ -961,7 +1462,9 @@
           <!-- Card 4 -->
           <div class="content-card">
             <div class="card-poster">
-              <div class="card-poster-img">🎬</div>
+              <div class="card-poster-img poster-art-4">
+                <div class="poster-figure"></div>
+              </div>
               <div class="card-badge">GUJ</div>
               <div class="rec-badge">
                 <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
@@ -983,26 +1486,41 @@
         </div>
       </div>
 
+      <div class="section-divider"></div>
+
       <!-- Other homepage rows -->
       <div class="content-row">
         <div class="row-title">Continue Watching</div>
         <div class="row-scroll">
-          <div class="mini-card"><div class="mini-card-poster"></div><div class="mini-card-title">Desi Dhamaka</div></div>
-          <div class="mini-card"><div class="mini-card-poster"></div><div class="mini-card-title">Chhora Haryanvi</div></div>
-          <div class="mini-card"><div class="mini-card-poster"></div><div class="mini-card-title">Jaat Ki Yaari</div></div>
+          <div class="mini-card"><div class="mini-card-poster poster-art-5"></div><div class="mini-card-title">Desi Dhamaka</div></div>
+          <div class="mini-card"><div class="mini-card-poster poster-art-2"></div><div class="mini-card-title">Chhora Haryanvi</div></div>
+          <div class="mini-card"><div class="mini-card-poster poster-art-4"></div><div class="mini-card-title">Jaat Ki Yaari</div></div>
         </div>
       </div>
 
       <div class="content-row">
         <div class="row-title">Trending Now</div>
         <div class="row-scroll">
-          <div class="mini-card"><div class="mini-card-poster"></div><div class="mini-card-title">Sapno Ka Gaon</div></div>
-          <div class="mini-card"><div class="mini-card-poster"></div><div class="mini-card-title">Mera Watan</div></div>
-          <div class="mini-card"><div class="mini-card-poster"></div><div class="mini-card-title">Dhol Bajne De</div></div>
+          <div class="mini-card"><div class="mini-card-poster poster-art-3"></div><div class="mini-card-title">Sapno Ka Gaon</div></div>
+          <div class="mini-card"><div class="mini-card-poster poster-art-6"></div><div class="mini-card-title">Mera Watan</div></div>
+          <div class="mini-card"><div class="mini-card-poster poster-art-1"></div><div class="mini-card-title">Dhol Bajne De</div></div>
         </div>
       </div>
 
     </div>
+  </div>
+
+  <div class="spec-notes">
+    <h4>Design Specs</h4>
+    <ul>
+      <li>Section placed immediately below hero, above all other rows</li>
+      <li>Subtle orange tint background: <code>rgba(255,107,0,0.04)</code></li>
+      <li>Avatar: <code>36px</code> with <code>2px</code> brand border</li>
+      <li>"Randeep's Pick" badge: gold star <code>#FFD700</code> on dark bg</li>
+      <li>Section must match existing content row dimensions</li>
+      <li>Card spacing: <code>14px</code> gap, horizontal scroll</li>
+      <li>Section divider: <code>1px rgba(255,255,255,0.06)</code></li>
+    </ul>
   </div>
 </div>
 
@@ -1012,16 +1530,28 @@
 <div class="screen-container" id="screenD">
   <div class="screen-label">
     <h2>Loading / Skeleton State</h2>
-    <p>Shown while content cards are loading on slow connections</p>
+    <p>Shimmer placeholder shown while content cards load on slow 3G connections.</p>
   </div>
   <div class="phone-frame">
     <div class="homepage-full">
 
+      <div class="status-bar">
+        <span>9:41</span>
+        <div class="status-bar-icons">
+          <svg viewBox="0 0 24 24"><path d="M1 9l2 2c4.97-4.97 13.03-4.97 18 0l2-2C16.93 2.93 7.08 2.93 1 9zm8 8l3 3 3-3c-1.65-1.66-4.34-1.66-6 0zm-4-4l2 2c2.76-2.76 7.24-2.76 10 0l2-2C15.14 9.14 8.87 9.14 5 13z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M15.67 4H14V2h-4v2H8.33C7.6 4 7 4.6 7 5.33v15.33C7 21.4 7.6 22 8.33 22h7.33c.74 0 1.34-.6 1.34-1.33V5.33C17 4.6 16.4 4 15.67 4z"/></svg>
+        </div>
+      </div>
+
       <div class="homepage-header">
         <div class="stage-logo">STAGE</div>
         <div class="header-icons">
-          <div class="header-icon"></div>
-          <div class="header-icon"></div>
+          <div class="header-icon">
+            <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5z"/></svg>
+          </div>
+          <div class="header-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"/></svg>
+          </div>
         </div>
       </div>
 
@@ -1032,12 +1562,13 @@
         </div>
       </div>
 
+      <!-- Randeep Section — Loading State -->
       <div class="randeep-section">
         <div class="section-header">
-          <div class="section-avatar">RH</div>
+          <div class="skeleton skeleton-avatar"></div>
           <div class="section-title-block">
-            <h3>Randeep ki Pasand</h3>
-            <p>Loading recommendations...</p>
+            <div class="skeleton skeleton-title"></div>
+            <div class="skeleton skeleton-subtitle"></div>
           </div>
         </div>
 
@@ -1060,25 +1591,41 @@
         </div>
       </div>
 
+      <div class="section-divider"></div>
+
+      <!-- Trending — Loading State -->
       <div class="content-row">
-        <div class="row-title">Trending Now</div>
-        <div class="skeleton-row">
+        <div class="skeleton skeleton-title" style="width:140px;margin-bottom:12px;margin-left:0;"></div>
+        <div class="skeleton-row" style="padding-left:0;">
           <div>
-            <div class="skeleton" style="width:100px;height:140px;"></div>
-            <div class="skeleton skeleton-text" style="width:80px;"></div>
+            <div class="skeleton" style="width:105px;height:148px;flex-shrink:0;"></div>
+            <div class="skeleton skeleton-text" style="width:85px;"></div>
           </div>
           <div>
-            <div class="skeleton" style="width:100px;height:140px;"></div>
-            <div class="skeleton skeleton-text" style="width:80px;"></div>
+            <div class="skeleton" style="width:105px;height:148px;flex-shrink:0;"></div>
+            <div class="skeleton skeleton-text" style="width:85px;"></div>
           </div>
           <div>
-            <div class="skeleton" style="width:100px;height:140px;"></div>
-            <div class="skeleton skeleton-text" style="width:80px;"></div>
+            <div class="skeleton" style="width:105px;height:148px;flex-shrink:0;"></div>
+            <div class="skeleton skeleton-text" style="width:85px;"></div>
           </div>
         </div>
       </div>
 
     </div>
+  </div>
+
+  <div class="spec-notes">
+    <h4>Design Specs</h4>
+    <ul>
+      <li>Shimmer: <code>linear-gradient(90deg, #1C1C1C 25%, #282828 50%, #1C1C1C 75%)</code></li>
+      <li>Animation: <code>shimmer 1.5s infinite</code></li>
+      <li>Skeleton shapes match exact card dimensions</li>
+      <li>Avatar skeleton: <code>36px</code> circle</li>
+      <li>Poster skeleton: <code>140×200px</code> rectangle</li>
+      <li>Text skeleton: <code>13px</code> height, rounded corners</li>
+      <li>Keep section headers visible while cards load</li>
+    </ul>
   </div>
 </div>
 
@@ -1087,11 +1634,12 @@ function showScreen(id) {
   document.querySelectorAll('.screen-container').forEach(el => el.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(el => el.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  // Find the tab index
   const tabs = document.querySelectorAll('.nav-tab');
   const screens = ['screenA', 'screenB', 'screenC', 'screenD'];
   const idx = screens.indexOf(id);
   if (idx >= 0) tabs[idx].classList.add('active');
+  // Scroll to top when switching screens
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
 
