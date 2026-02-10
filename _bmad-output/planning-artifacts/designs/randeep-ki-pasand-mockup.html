@@ -227,10 +227,10 @@
     width: 100%;
     background: var(--bg-surface);
     border-radius: var(--radius-lg);
-    padding: var(--space-lg);
+    padding: 20px;
     display: flex;
     gap: var(--space-md);
-    align-items: flex-start;
+    align-items: center;
     margin-bottom: var(--space-xl);
     box-shadow: var(--shadow-card);
     position: relative;
@@ -239,8 +239,8 @@
   }
 
   .randeep-avatar {
-    width: 72px;
-    height: 72px;
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
     flex-shrink: 0;
     display: flex;
@@ -300,11 +300,11 @@
   }
   .randeep-text {
     font-family: var(--font-hindi);
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.5;
     color: var(--text-primary);
     position: relative;
-    padding-left: 16px;
+    padding-left: 14px;
   }
   .randeep-text::before {
     content: '';
@@ -640,7 +640,7 @@
     right: 0;
     background: var(--bg-card);
     border-radius: var(--radius-xl) var(--radius-xl) 0 0;
-    padding: var(--space-sm) var(--space-md) var(--space-xl);
+    padding: var(--space-sm) var(--space-md) var(--space-lg);
     z-index: 20;
     box-shadow: var(--shadow-drawer);
     animation: slideUp 0.35s cubic-bezier(0.22, 1, 0.36, 1);
@@ -652,18 +652,18 @@
   }
 
   .drawer-handle {
-    width: 40px;
+    width: 36px;
     height: 4px;
     background: #444;
     border-radius: var(--radius-pill);
-    margin: var(--space-sm) auto var(--space-lg);
+    margin: var(--space-sm) auto var(--space-md);
   }
 
   .drawer-header {
     display: flex;
     align-items: center;
-    gap: var(--space-md);
-    margin-bottom: var(--space-lg);
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
   }
 
   .drawer-avatar {
@@ -714,11 +714,11 @@
 
   .drawer-cards {
     display: flex;
-    gap: var(--space-md);
+    gap: 12px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-bottom: var(--space-md);
+    padding-bottom: var(--space-sm);
     margin: 0 calc(var(--space-md) * -1);
     padding-left: var(--space-md);
     padding-right: var(--space-md);
@@ -727,7 +727,7 @@
 
   /* Content Card — shared between drawer and section */
   .content-card {
-    width: 140px;
+    width: 120px;
     flex-shrink: 0;
     scroll-snap-align: start;
     transition: transform 0.15s;
@@ -735,8 +735,8 @@
   .content-card:active { transform: scale(0.97); }
 
   .card-poster {
-    width: 140px;
-    height: 200px;
+    width: 120px;
+    height: 170px;
     border-radius: var(--radius-sm);
     position: relative;
     overflow: hidden;
@@ -771,43 +771,46 @@
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background: var(--brand-gradient);
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     color: white;
-    border: none;
-    border-radius: var(--radius-pill);
-    padding: 9px 22px;
-    font-size: 13px;
-    font-weight: var(--font-weight-bold);
+    border: 1.5px solid rgba(255,255,255,0.25);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    font-size: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
-    gap: 5px;
-    white-space: nowrap;
-    box-shadow: var(--shadow-btn);
-    transition: transform 0.15s;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+    transition: transform 0.15s, background 0.15s;
     font-family: var(--font-primary);
   }
-  .card-play-btn:active { transform: translateX(-50%) scale(0.93); }
-  .card-play-btn svg { width: 14px; height: 14px; fill: white; }
+  .card-play-btn:active { transform: translateX(-50%) scale(0.9); background: rgba(229,9,20,0.8); }
+  .card-play-btn svg { width: 16px; height: 16px; fill: white; margin-left: 2px; }
 
   .card-info {
-    padding: var(--space-sm) 0 0;
+    padding: 6px 0 0;
   }
   .card-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: var(--font-weight-semibold);
     line-height: 1.3;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    width: 120px;
   }
   .card-meta {
-    font-size: 11px;
+    font-size: 10px;
     color: var(--text-muted);
     display: flex;
     align-items: center;
-    gap: var(--space-xs);
+    gap: 3px;
   }
   .lang-badge {
     background: var(--badge-bg);
@@ -819,7 +822,7 @@
   }
 
   .drawer-footer {
-    padding-top: var(--space-sm);
+    padding-top: var(--space-xs);
     border-top: 1px solid rgba(255,255,255,0.06);
   }
 
@@ -829,10 +832,10 @@
     justify-content: center;
     gap: 6px;
     color: var(--brand-primary);
-    font-size: 14px;
+    font-size: 13px;
     font-weight: var(--font-weight-semibold);
     text-decoration: none;
-    padding: var(--space-md) 0 var(--space-xs);
+    padding: var(--space-sm) 0 var(--space-xs);
     transition: opacity 0.15s;
   }
   .drawer-see-all:active { opacity: 0.7; }
@@ -936,7 +939,7 @@
 
   .section-cards {
     display: flex;
-    gap: 14px;
+    gap: 12px;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
@@ -986,7 +989,7 @@
     animation: shimmer 1.5s infinite;
     border-radius: var(--radius-sm);
   }
-  .skeleton-poster { width: 140px; height: 200px; flex-shrink: 0; }
+  .skeleton-poster { width: 120px; height: 170px; flex-shrink: 0; }
   .skeleton-text { height: 13px; width: 100px; margin-top: 8px; border-radius: var(--radius-xs); }
   .skeleton-text-sm { height: 10px; width: 70px; margin-top: 5px; border-radius: var(--radius-xs); }
   .skeleton-row {
@@ -1146,7 +1149,7 @@
         </div>
         <div class="randeep-quote">
           <div class="randeep-name">Randeep Hooda</div>
-          <div class="randeep-text">Maine ye 3 movies dekhi, maza aa gaya! Tum bhi dekho!</div>
+          <div class="randeep-text">Maine is hafte ye 3 movies dekhi, maza aa gaya! Jao Tum bhi dekho!</div>
         </div>
       </div>
 
@@ -1247,16 +1250,15 @@
               <div class="card-poster-img poster-art-1">
                 <div class="poster-figure"></div>
               </div>
-              <div class="card-badge">HAR</div>
+              <div class="card-badge">Drama</div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                Play
               </button>
             </div>
             <div class="card-info">
               <div class="card-title">Desi Thakur</div>
               <div class="card-meta">
-                <span class="lang-badge">Haryanvi</span>
+                <span class="lang-badge">Drama</span>
                 <span>· 2h 10m</span>
               </div>
             </div>
@@ -1268,16 +1270,15 @@
               <div class="card-poster-img poster-art-2">
                 <div class="poster-figure"></div>
               </div>
-              <div class="card-badge">HAR</div>
+              <div class="card-badge">Action</div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                Play
               </button>
             </div>
             <div class="card-info">
               <div class="card-title">Mera Gaon</div>
               <div class="card-meta">
-                <span class="lang-badge">Haryanvi</span>
+                <span class="lang-badge">Action</span>
                 <span>· 1h 48m</span>
               </div>
             </div>
@@ -1289,16 +1290,15 @@
               <div class="card-poster-img poster-art-5">
                 <div class="poster-figure"></div>
               </div>
-              <div class="card-badge">HAR</div>
+              <div class="card-badge">Comedy</div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                Play
               </button>
             </div>
             <div class="card-info">
               <div class="card-title">Sapno Ka Shehar</div>
               <div class="card-meta">
-                <span class="lang-badge">Haryanvi</span>
+                <span class="lang-badge">Comedy</span>
                 <span>· 2h 05m</span>
               </div>
             </div>
@@ -1322,9 +1322,9 @@
       <li>Drawer: <code>border-radius: 24px 24px 0 0</code></li>
       <li>Drawer animation: <code>slideUp 350ms cubic-bezier(0.22, 1, 0.36, 1)</code></li>
       <li>Background dim: <code>opacity: 0.35</code> + <code>blur(1px)</code></li>
-      <li>Card poster: <code>140×200px</code> (2:3 ratio), <code>border-radius: 8px</code></li>
-      <li>Play button: brand gradient with <code>box-shadow</code> glow</li>
-      <li>Language badge: <code>9px bold uppercase</code> on brand red</li>
+      <li>Card poster: <code>120×170px</code>, <code>border-radius: 8px</code></li>
+      <li>Play button: <code>36px</code> circle, frosted glass bg, white border</li>
+      <li>Genre badge: <code>9px bold uppercase</code> on brand red</li>
       <li>Horizontal scroll with <code>scroll-snap-type: x mandatory</code></li>
       <li>Dismiss: swipe down or tap dimmed area</li>
     </ul>
@@ -1390,20 +1390,19 @@
               <div class="card-poster-img poster-art-1">
                 <div class="poster-figure"></div>
               </div>
-              <div class="card-badge">HAR</div>
+              <div class="card-badge">Drama</div>
               <div class="rec-badge">
                 <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
                 PICK
               </div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                Play
               </button>
             </div>
             <div class="card-info">
               <div class="card-title">Desi Thakur</div>
               <div class="card-meta">
-                <span class="lang-badge">Haryanvi</span>
+                <span class="lang-badge">Drama</span>
                 <span>· 2h 10m</span>
               </div>
             </div>
@@ -1415,20 +1414,19 @@
               <div class="card-poster-img poster-art-6">
                 <div class="poster-figure"></div>
               </div>
-              <div class="card-badge">RAJ</div>
+              <div class="card-badge">Action</div>
               <div class="rec-badge">
                 <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
                 PICK
               </div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                Play
               </button>
             </div>
             <div class="card-info">
               <div class="card-title">Rajputana Pride</div>
               <div class="card-meta">
-                <span class="lang-badge">Rajasthani</span>
+                <span class="lang-badge">Action</span>
                 <span>· 1h 55m</span>
               </div>
             </div>
@@ -1440,20 +1438,19 @@
               <div class="card-poster-img poster-art-3">
                 <div class="poster-figure"></div>
               </div>
-              <div class="card-badge">BHO</div>
+              <div class="card-badge">Romance</div>
               <div class="rec-badge">
                 <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
                 PICK
               </div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                Play
               </button>
             </div>
             <div class="card-info">
               <div class="card-title">Ganga Kinare</div>
               <div class="card-meta">
-                <span class="lang-badge">Bhojpuri</span>
+                <span class="lang-badge">Romance</span>
                 <span>· 2h 20m</span>
               </div>
             </div>
@@ -1465,20 +1462,19 @@
               <div class="card-poster-img poster-art-4">
                 <div class="poster-figure"></div>
               </div>
-              <div class="card-badge">GUJ</div>
+              <div class="card-badge">Comedy</div>
               <div class="rec-badge">
                 <svg viewBox="0 0 24 24"><path d="M12 2L15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2z"/></svg>
                 PICK
               </div>
               <button class="card-play-btn">
                 <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                Play
               </button>
             </div>
             <div class="card-info">
               <div class="card-title">Ahmedabad Nights</div>
               <div class="card-meta">
-                <span class="lang-badge">Gujarati</span>
+                <span class="lang-badge">Comedy</span>
                 <span>· 1h 45m</span>
               </div>
             </div>
@@ -1622,7 +1618,7 @@
       <li>Animation: <code>shimmer 1.5s infinite</code></li>
       <li>Skeleton shapes match exact card dimensions</li>
       <li>Avatar skeleton: <code>36px</code> circle</li>
-      <li>Poster skeleton: <code>140×200px</code> rectangle</li>
+      <li>Poster skeleton: <code>120×170px</code> rectangle</li>
       <li>Text skeleton: <code>13px</code> height, rounded corners</li>
       <li>Keep section headers visible while cards load</li>
     </ul>
