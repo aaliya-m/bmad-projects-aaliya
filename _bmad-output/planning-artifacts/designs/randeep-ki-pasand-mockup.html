@@ -10,16 +10,16 @@
 <style>
   /* ============================================
      STAGE OTT DESIGN SYSTEM
-     Brand: Orange-themed, dark background OTT platform
+     Brand: Red & black themed, dark background OTT platform
      ============================================ */
   :root {
-    /* Stage Brand Colors — Orange Theme */
-    --brand-primary: #FF6B00;
-    --brand-primary-light: #FF8A33;
-    --brand-primary-dark: #E55D00;
-    --brand-primary-hover: #E55D00;
-    --brand-gradient: linear-gradient(135deg, #FF6B00 0%, #FF9A44 100%);
-    --brand-gradient-strong: linear-gradient(135deg, #FF5500 0%, #FF8800 50%, #FFAA33 100%);
+    /* Stage Brand Colors — Red & Black Theme (Netflix-style) */
+    --brand-primary: #E50914;
+    --brand-primary-light: #FF1A25;
+    --brand-primary-dark: #B20710;
+    --brand-primary-hover: #B20710;
+    --brand-gradient: linear-gradient(135deg, #E50914 0%, #FF2D38 100%);
+    --brand-gradient-strong: linear-gradient(135deg, #B20710 0%, #E50914 50%, #FF2D38 100%);
     --brand-accent: #FFD700;
     --brand-accent-soft: #FFECB3;
 
@@ -41,7 +41,7 @@
     --success-green: #00C853;
     --success-green-soft: rgba(0, 200, 83, 0.15);
     --badge-bg: rgba(255, 255, 255, 0.1);
-    --badge-bg-active: rgba(255, 107, 0, 0.2);
+    --badge-bg-active: rgba(229, 9, 20, 0.2);
 
     /* Typography */
     --font-primary: 'Poppins', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
@@ -72,9 +72,9 @@
     /* Shadows */
     --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
     --shadow-drawer: 0 -8px 40px rgba(0, 0, 0, 0.7);
-    --shadow-btn: 0 4px 16px rgba(255, 107, 0, 0.35);
-    --shadow-btn-hover: 0 6px 24px rgba(255, 107, 0, 0.5);
-    --shadow-glow: 0 0 20px rgba(255, 107, 0, 0.2);
+    --shadow-btn: 0 4px 16px rgba(229, 9, 20, 0.35);
+    --shadow-btn-hover: 0 6px 24px rgba(229, 9, 20, 0.5);
+    --shadow-glow: 0 0 20px rgba(229, 9, 20, 0.2);
   }
 
   /* ============================================
@@ -178,7 +178,7 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    background: radial-gradient(circle, rgba(255, 107, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(229, 9, 20, 0.08) 0%, transparent 70%);
     pointer-events: none;
   }
 
@@ -235,7 +235,7 @@
     box-shadow: var(--shadow-card);
     position: relative;
     z-index: 1;
-    border: 1px solid rgba(255, 107, 0, 0.12);
+    border: 1px solid rgba(229, 9, 20, 0.12);
   }
 
   .randeep-avatar {
@@ -250,7 +250,7 @@
     position: relative;
     background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
     border: 2.5px solid var(--brand-primary);
-    box-shadow: 0 0 16px rgba(255, 107, 0, 0.25);
+    box-shadow: 0 0 16px rgba(229, 9, 20, 0.25);
   }
   .randeep-avatar-inner {
     width: 100%;
@@ -413,7 +413,7 @@
   .hero-banner {
     width: 100%;
     height: 200px;
-    background: linear-gradient(135deg, #1a0f00 0%, #2a1500 30%, #1a0a00 100%);
+    background: linear-gradient(135deg, #1a0505 0%, #2a0808 30%, #1a0303 100%);
     display: flex;
     align-items: flex-end;
     padding: var(--space-lg) var(--space-md);
@@ -436,7 +436,7 @@
     width: 120px;
     height: 160px;
     border-radius: var(--radius-md);
-    background: linear-gradient(135deg, rgba(255,107,0,0.15), rgba(255,154,68,0.08));
+    background: linear-gradient(135deg, rgba(229,9,20,0.15), rgba(229,9,20,0.08));
     transform: rotate(-5deg);
   }
   .hero-text {
@@ -673,7 +673,7 @@
     flex-shrink: 0;
     overflow: hidden;
     border: 2.5px solid var(--brand-primary);
-    box-shadow: 0 0 12px rgba(255, 107, 0, 0.2);
+    box-shadow: 0 0 12px rgba(229, 9, 20, 0.2);
     background: linear-gradient(145deg, #3d2b1f 0%, #2a1f16 50%, #1a1410 100%);
     position: relative;
   }
@@ -859,7 +859,7 @@
     left: 0;
     right: 0;
     height: 100%;
-    background: linear-gradient(180deg, rgba(255, 107, 0, 0.04) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(229, 9, 20, 0.04) 0%, transparent 100%);
     pointer-events: none;
   }
 
@@ -1087,7 +1087,7 @@
     opacity: 0.5;
   }
   .spec-notes code {
-    background: rgba(255,107,0,0.1);
+    background: rgba(229,9,20,0.1);
     color: var(--brand-primary-light);
     padding: 1px 4px;
     border-radius: 3px;
@@ -1165,9 +1165,9 @@
   <div class="spec-notes">
     <h4>Design Specs</h4>
     <ul>
-      <li>Brand gradient CTA: <code>#FF6B00 → #FF9A44</code></li>
+      <li>Brand gradient CTA: <code>#E50914 → #FF2D38</code></li>
       <li>Success icon: <code>#00C853</code> with glow shadow</li>
-      <li>Card border: <code>1px solid rgba(255,107,0,0.12)</code></li>
+      <li>Card border: <code>1px solid rgba(229,9,20,0.12)</code></li>
       <li>Quote accent bar: brand gradient, 3px width</li>
       <li>No nav bar, no distractions — single funnel to CTA</li>
       <li>Avatar placeholder — replace with Randeep asset</li>
@@ -1324,7 +1324,7 @@
       <li>Background dim: <code>opacity: 0.35</code> + <code>blur(1px)</code></li>
       <li>Card poster: <code>140×200px</code> (2:3 ratio), <code>border-radius: 8px</code></li>
       <li>Play button: brand gradient with <code>box-shadow</code> glow</li>
-      <li>Language badge: <code>9px bold uppercase</code> on brand orange</li>
+      <li>Language badge: <code>9px bold uppercase</code> on brand red</li>
       <li>Horizontal scroll with <code>scroll-snap-type: x mandatory</code></li>
       <li>Dismiss: swipe down or tap dimmed area</li>
     </ul>
@@ -1514,7 +1514,7 @@
     <h4>Design Specs</h4>
     <ul>
       <li>Section placed immediately below hero, above all other rows</li>
-      <li>Subtle orange tint background: <code>rgba(255,107,0,0.04)</code></li>
+      <li>Subtle red tint background: <code>rgba(229,9,20,0.04)</code></li>
       <li>Avatar: <code>36px</code> with <code>2px</code> brand border</li>
       <li>"Randeep's Pick" badge: gold star <code>#FFD700</code> on dark bg</li>
       <li>Section must match existing content row dimensions</li>

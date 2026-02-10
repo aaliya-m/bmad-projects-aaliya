@@ -25,7 +25,7 @@ Design the UI for "Randeep ki Pasand" — a curated content recommendation featu
 > All designs MUST use Stage's existing design system — colors, typography, spacing, component patterns, and visual language. Do not introduce new design patterns unless explicitly required by this brief.
 
 ### Key Design System Elements to Use
-- Stage brand colors and gradients
+- Stage brand colors (red & black) and gradients
 - Existing card/tile components for content thumbnails
 - Standard CTA button styles
 - Bottom sheet/drawer patterns (if existing)
